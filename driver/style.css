@@ -1,0 +1,646 @@
+/* -------------------------------------------------
+    GLOBAL + FADE
+-------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #f1effa;
+    color: #1f2330;
+    animation: pageFade 0.5s ease;
+}
+
+@keyframes pageFade {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------------------
+    NAVBAR — Purple Luxe
+-------------------------------------------------- */
+.navbar {
+    width: 100%;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #d7d2f3;
+    padding: 16px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 14px rgba(97, 69, 143, 0.1);
+}
+
+.navbar .brand {
+    font-size: 23px;
+    font-weight: 800;
+    color: #4c1d95;
+}
+
+.navbar .menu a {
+    padding: 7px 20px;
+    border-radius: 22px;
+    margin-left: 12px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #4b5563;
+    border: 1px solid #d8d6e8;
+    background: #fff;
+    transition: 0.25s;
+}
+
+.navbar .menu a:hover {
+    transform: translateY(-2px);
+    background: #ede9fe;
+    border-color: #c4b5fd;
+    box-shadow: 0 4px 12px rgba(135, 96, 255, 0.25);
+}
+
+.navbar .menu a.active {
+    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 16px rgba(124,58,237,0.4);
+}
+
+/* -------------------------------------------------
+    PAGE LAYOUT
+-------------------------------------------------- */
+.page {
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 45px;
+    gap: 45px;
+}
+
+/* -------------------------------------------------
+    LEFT IMAGE AREA
+-------------------------------------------------- */
+.left-img-area {
+    flex: 1;
+    min-height: 430px;
+    background: #e9e4fb;
+    border-radius: 18px;
+    border: 2px dashed #c4b5fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6b21a8;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.left-img-area:hover {
+    transform: scale(1.02);
+    background: #ede9fe;
+    border-color: #a78bfa;
+}
+
+/* -------------------------------------------------
+    FORM AREA
+-------------------------------------------------- */
+.form-box {
+    flex: 1;
+    max-width: 420px;
+    animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity:0; transform: translateY(10px); }
+    to   { opacity:1; transform: translateY(0); }
+}
+
+.form-title {
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #4c1d95;
+}
+
+/* -------------------------------------------------
+    INPUT FIELD
+-------------------------------------------------- */
+.input-field {
+    width: 100%;
+    background: #f6f5ff;
+    padding: 15px 20px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #d4ccff;
+    font-size: 15px;
+    transition: 0.25s;
+}
+.input-car {
+    width: 100%;
+    background: #f6f5ff;
+    padding: 15px 20px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #d4ccff;
+    font-size: 15px;
+    transition: 0.25s;
+}
+
+
+.input-field:hover {
+    background: #eeeaff;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #a78bfa;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(167,139,250,0.35);
+    transform: translateY(-2px);
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+}
+
+/* -------------------------------------------------
+    BUTTON — PURPLE GRADIENT
+-------------------------------------------------- */
+.primary-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 17px;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    transition: 0.25s;
+    box-shadow: 0 4px 16px rgba(124,58,237,0.35);
+}
+
+.primary-btn:hover {
+    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* -------------------------------------------------
+    UPLOAD BOX
+-------------------------------------------------- */
+.upload-box {
+    width: 100%;
+    height: 180px;
+    background: #f4f1ff;
+    border-radius: 18px;
+    border: 2px dashed #c4b5fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6d28d9;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.upload-box:hover {
+    transform: scale(1.03);
+    background: #ede9fe;
+    border-color: #a78bfa;
+}
+
+/* -------------------------------------------------
+    BOTTOM ACTION AREA
+-------------------------------------------------- */
+.bottom-action {
+    width: 92%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: flex-end;
+}
+/* ---------------------------------------------
+   GLOBAL
+--------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #f1effa;
+    color: #2d2d2d;
+}
+
+/* ---------------------------------------------
+   NAVBAR
+--------------------------------------------- */
+.nav {
+    width: 100%;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #d7d2f3;
+    padding: 14px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-inner {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #4c1d95;
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background: conic-gradient(from 210deg, #67e8f9, #7c3aed);
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: row;       /* Хөндлөнгөөр */
+    gap: 20px;
+}
+
+.nav-link .btn {
+    padding: 7px 18px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #555;
+    margin-left: 10px;
+    transition: .25s;
+}
+
+.nav-link .btn:hover {
+    background: #ede9fe;
+    border-color: #c4b5fd;
+    transform: translateY(-2px);
+}
+
+/* ---------------------------------------------
+   CONTAINER
+--------------------------------------------- */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;  /* маш бага хажуу зай */
+}
+
+
+
+/* ---------------------------------------------
+   HERO SECTION
+--------------------------------------------- */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    padding: 5rem 0 3rem;
+}
+
+
+.hero h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #4c1d95;
+}
+
+.hero p {
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+.hero-card {
+    padding: 1.4rem;
+    border-radius: 14px;
+    border: 1px solid #d5d0f5;
+    background: linear-gradient(135deg, #ede9fe, #faf7ff);
+    box-shadow: 0 6px 15px rgba(124,58,237,0.15);
+}
+
+/* ---------------------------------------------
+   FINDER SECTION
+--------------------------------------------- */
+#routes h2 {
+    margin-top: 25px;
+    color: #4c1d95;
+}
+
+.finder {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(160px, 1fr));
+    gap: 1.8rem;
+    padding: 1rem 0;
+    display:flex;
+    gap:1rem;
+    align-items:flex-end;
+}
+
+
+
+label {
+    font-size: .9rem;
+    color: #6b7280;
+    margin-bottom: 4px;
+    display: block;
+}
+
+select, input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid #d4ccff;
+    background: #f6f5ff;
+    transition: .25s;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #a78bfa;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(167,139,250,0.3);
+}
+
+/* ---------------------------------------------
+   MAIN BUTTON
+--------------------------------------------- */
+.btn.primary {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    color: white;
+    border-radius: 16px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    transition: .25s;
+}
+
+.btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(124,58,237,0.45);
+}
+
+/* ---------------------------------------------
+   SEARCH RESULTS
+--------------------------------------------- */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background: white;
+    padding: 1.4rem;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.card strong {
+    color: #4c1d95;
+}
+
+/* -------------------------------------------------
+   FINDER SECTION — бүгдийг нэг мөрөнд оруулах
+-------------------------------------------------- */
+#routes h2 {
+    margin-top: 25px;
+    color: #4c1d95;
+}
+
+/* Нэг мөрөөр байрлуулах */
+.finder {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+}
+
+.finder > div {
+    flex: 1;
+}
+
+.finder label {
+    font-size: .9rem;
+    color: #6b7280;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* Input + Select design */
+.finder select,
+.finder input {
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    border-radius: 14px;
+    border: 1px solid #d4ccff;
+    background: #fff;
+    font-size: 15px;
+    transition: 0.25s;
+}
+
+.finder select:hover,
+.finder input:hover {
+    border-color: #bfa8ff;
+    background: #faf7ff;
+}
+
+.finder select:focus,
+.finder input:focus {
+    outline: none;
+    border-color: #a78bfa;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(167,139,250,0.3);
+}
+
+/* Хайх товч — input-тэй тэнцүү өндөр */
+#search {
+    height: 52px;
+    flex: 0 0 160px; /* Хэмжээг нь тогтоож баруун талд шахах */
+    border-radius: 14px;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    color: white;
+    font-size: 17px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+#search:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(124,58,237,.35);
+}
+
+.icon-btn {
+    width: 50px;
+    height: 50px;
+    background: #ffffffcc;
+    border: 1px solid #e2e2e2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.icon-btn i {
+    font-size: 22px;
+    color: #6d28d9;
+}
+
+
+.icon-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.icon-btn i {
+    font-size: 20px;
+    color: #4c1d95; /* Purple theme */
+}
+
+
+.profile-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  z-index: 9999;
+  animation: fadeIn .2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity:0; transform:translate(-50%, -48%); }
+  to { opacity:1; transform:translate(-50%, -50%); }
+}
+
+.p-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.p-row {
+  margin: 10px 0;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+.profile-pic-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px auto;
+    position: relative;
+}
+
+#profileImg {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #8b5cf6; /* purple */
+}
+
+.profile-camera {
+    width: 38px;
+    height: 38px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.profile-camera i {
+    font-size: 18px;
+    color: #6d28d9;
+}
+#editProfileBtn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    background: linear-gradient(135deg,#7c3aed,#5b21b6);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+#editProfileBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(124,58,237,0.35);
+}
+@media (max-width: 500px){
+  #routes{
+    text-align:center;
+  }
+
+  .finder{
+    flex-direction:column;   /* баганаар байрлана */
+    align-items:stretch;     /* input-ууд адил өргөнтэй */
+    max-width:320px;         /* формын өргөнийг жижгэрүүлнэ */
+    margin:0 auto;           /* дэлгэцийн ХООРОНД ГОЛД НЬ */
+  }
+
+  .finder > div{
+    width:100%;
+  }
+
+  .finder label{
+    text-align:left;
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="brand">Rural Transport Driver</div>
+    <div class="menu">
+        
+        <a href="login.html" class="active">Нэвтрэх</a>
+        <a href="signup-user.html">Бүртгүүлэх</a>
+    </div>
+</div>
+
+<div class="page">
+
+    <div class="left-img-area">
+        Зураг оруулах газар
+    </div>
+
+    <div class="form-box">
+        <div class="form-title">Жолооч нэвтрэх</div>
+
+        <!-- ID-тай болгосон хувилбар -->
+        <input id="loginPhone" class="input-field" placeholder="Утасны дугаар">
+        <input id="loginPass" class="input-field" type="password" placeholder="Нууц үг">
+
+        <div style="text-align:right; margin-bottom:15px; font-size:13px; cursor:pointer;">
+            Нууц үг мартсан уу?
+        </div>
+
+        <button id="loginBtn" class="primary-btn">Нэвтрэх</button>
+    </div>
+
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>User Sign Up</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div class="navbar">
+        <div class="brand">Rural Transport</div>
+        <div class="menu">
+           
+            <a href="login.html">Нэвтрэх</a>
+            <a href="signup-user.html" class="active">Бүртгүүлэх</a>
+        </div>
+    </div>
+
+    <div class="page">
+
+        <!-- Image placeholder -->
+        <div class="left-img-area">
+            Зураг оруулах газар
+        </div>
+
+        <!-- Form -->
+        <div class="form-box">
+            <div class="form-title">Хэрэглэгч</div>
+
+            <div class="input-row">
+
+    <div>
+        <input id="lname" class="input-field" placeholder="Овог"
+               oninput="onlyCyrillic(this,'warnLName')" spellcheck="false">
+        <small id="warnLName" class="warn">Зөвхөн монголоор бичнэ үү!</small>
+    </div>
+
+    <div>
+        <input id="fname" class="input-field" placeholder="Нэр"
+               oninput="onlyCyrillic(this,'warnFName')" spellcheck="false">
+        <small id="warnFName" class="warn">Зөвхөн монголоор бичнэ үү!</small>
+    </div>
+
+</div>
+
+
+
+            <input class="input-field" placeholder="Утасны дугаар">
+            <input class="input-field" type="password" placeholder="Нууц үг">
+            <input class="input-field" type="password" placeholder="Нууц үг давтах">
+
+            <button class="primary-btn">Бүртгүүлэх</button>
+        </div>
+
+    </div>
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="register.js"></script>
+
+</body>
+</html>

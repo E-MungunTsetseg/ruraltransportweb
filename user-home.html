@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>User Home - Rural Transport</title>
+    <link rel="stylesheet" href="home.css">
+
+    <!-- ICONS -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+</head>
+
+<body>
+
+<!-- ====================== PROFILE POPUP ====================== -->
+<div id="profileBox" class="profile-popup">
+
+    <div class="profile-card">
+
+        <!-- PROFILE IMAGE -->
+        <div class="profile-img-box">
+            <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+
+            <!-- Camera Icon -->
+            <label for="profileUpload" class="camera-btn">
+                <i class="fi fi-rr-camera"></i>
+            </label>
+
+            <input type="file" id="profileUpload" accept="image/*">
+        </div>
+
+        <div class="profile-name">
+            <span id="pLName"></span> <span id="pFName"></span>
+        </div>
+
+        <div class="profile-phone">📞 <span id="pPhone"></span></div>
+
+        <!-- CLOSE BUTTON -->
+        <button id="closePopup" class="close-popup">✕</button>
+
+        <button class="edit-btn" id="editBtn">Засах</button>
+
+    </div>
+</div>
+
+
+<!-- ====================== NAVBAR ====================== -->
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="brand">Rural Transport</div>
+
+        <div class="icon-group">
+            <div id="profileBtn" class="icon-btn"><i class="fi fi-rr-user"></i></div>
+            <div id="historyBtn" class="icon-btn"><i class="fi fi-rr-time-past"></i></div>
+
+            <!-- LOGOUT BUTTON -->
+            <button id="logoutIcon" class="icon-btn">
+                <i class="fi fi-rr-exit"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ====================== MAIN CONTENT ====================== -->
+<div class="container">
+
+    <header class="hero">
+        <div>
+            <h1>Орон нутгийн тогтсон чиглэлийн такси</h1>
+            <p>Маршрут, цагаар суудал захиалах — үнэнч, найдвартай, хурдан үйлчилгээ.</p>
+        </div>
+
+        <div class="hero-card">
+            <b>📍 Хаашаа явах гэж байна?</b>
+            <p class="muted">Доорх хэсгээс чиглэлээ сонгоод хайлтаа хийгээрэй.</p>
+        </div>
+    </header>
+
+    <!-- SEARCH AREA -->
+    <section id="routes">
+        <h2>Чиглэл хайх</h2>
+
+        <div class="finder">
+
+            <div>
+                <label>Эхлэх зогсоол</label>
+                <select id="from">
+                    <option disabled selected>Сонгоно уу</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Очих зогсоол</label>
+                <select id="to">
+                    <option disabled selected>Сонгоно уу</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Огноо</label>
+                <input type="date" id="date">
+            </div>
+
+            <button id="search">Хайх</button>
+
+        </div>
+        <div id="overlay" class="overlay-blur"></div>
+
+    </section>
+
+    <!-- RESULTS -->
+    <section>
+        <h2>Илэрц</h2>
+        <div id="results" class="grid-3"></div>
+    </section>
+
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="user-home.js"></script>
+
+</body>
+</html>

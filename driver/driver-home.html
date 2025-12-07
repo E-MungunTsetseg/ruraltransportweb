@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>User Home - Rural Transport</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="logo"></div>
+      <span>Rural Transport</span>
+    </div>
+
+    <div class="nav-link">
+      <a class="icon-btn" id="profileBtn"><i class="fi fi-rr-user"></i></a>
+      <a class="icon-btn"><i class="fi fi-rr-time-past"></i></a>
+      <a class="icon-btn" id="logoutBtn"><i class="fi fi-rr-exit"></i></a>
+    </div>
+  </div>
+</nav>
+
+<!-- PROFILE POPUP -->
+<div id="profileBox" class="profile-box" style="display:none;">
+  <div class="p-header">
+    <h3>Профайл</h3>
+    <button class="close-btn" onclick="hideProfile()">✕</button>
+  </div>
+
+  <div class="profile-pic-container">
+      <img id="profileImg" src="default-user.png">
+      <label for="profileUpload" class="profile-camera"><i class="fi fi-rr-camera"></i></label>
+      <input type="file" id="profileUpload" accept="image/*" style="display:none;">
+  </div>
+
+  <div class="p-row"><strong>Овог:</strong> <span id="pLName">...</span></div>
+  <div class="p-row"><strong>Нэр:</strong> <span id="pFName">...</span></div>
+  <div class="p-row"><strong>Утас:</strong> <span id="pPhone">...</span></div>
+
+  <button class="btn primary" id="logoutBtn2">Гарах</button>
+</div>
+
+
+<div class="container" style="margin-top:6rem;">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <h1>Орон нутгийн тогтсон чиглэлийн такси</h1>
+      <p>Маршрут, цагаар суудал захиалах — үнэнч, найдвартай, хурдан үйлчилгээ.</p>
+    </div>
+  </header>
+
+  <!-- SEARCH -->
+  <section id="routes">
+    <h2>Явах чиглэл</h2>
+
+    <div class="finder">
+
+      <div>
+        <label>Эхлэх зогсоол</label>
+        <select id="from">
+          <option disabled selected>Сонгоно уу</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Очих зогсоол</label>
+        <select id="to">
+          <option disabled selected>Сонгоно уу</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Огноо</label>
+        <input type="date" id="date">
+      </div>
+
+      <div>
+        <label>Цаг</label>
+        <input type="time" id="time">
+      </div>
+
+      <div>
+        <button class="btn primary" id="search">Оруулах</button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FEATURES -->
+  <section>
+    <h2>Гол боломжууд</h2>
+    <div class="grid-3">
+      <div class="card"><strong>Тогтсон үнэ</strong><p class="muted">Шударга тариф, сегмент бүр үнэлгээтэй.</p></div>
+      <div class="card"><strong>Цагийн хуваарь</strong><p class="muted">Өдөр бүрийн рейсүүд бэлэн.</p></div>
+      <div class="card"><strong>QR баталгаажуулалт</strong><p class="muted">Захиалга бүр QR-тай.</p></div>
+    </div>
+  </section>
+
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="driverregister.js"></script>
+
+</body>
+</html>

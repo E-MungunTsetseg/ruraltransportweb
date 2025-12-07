@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="brand">Rural Transport</div>
+    <div class="menu">
+        
+        <a href="login.html" class="active">Нэвтрэх</a>
+        <a href="signup-user.html">Бүртгүүлэх</a>
+    </div>
+</div>
+
+<div class="page">
+
+    <div class="left-img-area">
+        <img src="giphy.gif" alt="" width="700px" height="450px">
+    </div>
+
+    <div class="form-box">
+        <div class="form-title">Нэвтрэх</div>
+
+        <!-- ID-тай болгосон хувилбар -->
+        <input id="loginPhone" class="input-field" placeholder="Утасны дугаар">
+        <input id="loginPass" class="input-field" type="password" placeholder="Нууц үг">
+
+        <div class="forgot-link" id="forgotBtn" style="text-align:right; margin-bottom:15px; font-size:13px; cursor:pointer;">
+            Нууц үг мартсан уу?
+        </div>
+
+        <button id="loginBtn" class="primary-btn">Нэвтрэх</button>
+    </div>
+
+    <!-- RESET PASSWORD MODAL -->
+    <div id="resetModal" class="reset-modal">
+    <div class="reset-box">
+
+        <button id="resetCloseX" class="close-x">X</button>
+        <h3>Нууц үг сэргээх</h3>
+
+        <!-- ШАТ 1 -->
+        <div id="step1">
+            <input type="text" id="resetPhone" placeholder="Утасны дугаар" class="input-field">
+            <button id="sendCodeBtn" class="primary-btn" style="margin-top:16px;">Код илгээх</button>
+        </div>
+
+        <!-- ШАТ 2 -->
+        <div id="step2" style="display:none;">
+            <input type="text" id="otpCode" placeholder="Ирсэн код" class="input-field">
+            <button id="verifyBtn" class="primary-btn" style="margin-top:16px;">Баталгаажуулах</button>
+            <p id="otpError" style="color:red; display:none;">❗ Код буруу байна</p>
+        </div>
+
+        <!-- ШАТ 3 -->
+        <div id="step3" style="display:none;">
+            <input type="password" id="newPass" placeholder="Шинэ нууц үг" class="input-field">
+            <button id="updatePassBtn" class="primary-btn" style="margin-top:16px;">Шинэчлэх</button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- -------------- ШАТ 3: Шинэ нууц үг ---------------- -->
+<div id="step3" style="display:none;">
+    <input type="password" id="newPass" placeholder="Шинэ нууц үг" class="input-field">
+
+    <button id="updatePassBtn" class="primary-btn" style="margin-top:16px;">
+        Шинэчлэх
+    </button>
+</div>
+
+    </div>
+
+
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="login.js"></script>
+<script type="module" src="reset.js"></script>
+
+</body>
+</html>
