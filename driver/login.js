@@ -12,7 +12,6 @@ document.querySelector(".primary-btn").addEventListener("click", async () => {
         return;
     }
 
-    // 📌 LOGIN domain = user.ruraltransport (Firebase дээрхтэй адил!)
     const email = `${phone}@user.ruraltransport`;
 
     try {

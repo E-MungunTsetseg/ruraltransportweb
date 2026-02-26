@@ -1,6 +1,4 @@
-/* -------------------------------------------------
-    GLOBAL + FADE
--------------------------------------------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -19,9 +17,7 @@ body {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* -------------------------------------------------
-    NAVBAR — Purple Luxe
--------------------------------------------------- */
+
 .navbar {
     width: 100%;
     background: rgba(255,255,255,0.85);
@@ -69,9 +65,7 @@ body {
     box-shadow: 0 4px 16px rgba(124,58,237,0.4);
 }
 
-/* -------------------------------------------------
-    PAGE LAYOUT
--------------------------------------------------- */
+
 .page {
     width: 92%;
     margin: 0 auto;
@@ -81,9 +75,7 @@ body {
     gap: 45px;
 }
 
-/* -------------------------------------------------
-    LEFT IMAGE AREA
--------------------------------------------------- */
+
 .left-img-area {
     flex: 1;
     min-height: 430px;
@@ -104,9 +96,7 @@ body {
     border-color: #a78bfa;
 }
 
-/* -------------------------------------------------
-    FORM AREA
--------------------------------------------------- */
+
 .form-box {
     flex: 1;
     max-width: 420px;
@@ -125,9 +115,7 @@ body {
     color: #4c1d95;
 }
 
-/* -------------------------------------------------
-    INPUT FIELD
--------------------------------------------------- */
+
 .input-field {
     width: 100%;
     background: #f6f5ff;
@@ -167,9 +155,7 @@ body {
     gap: 12px;
 }
 
-/* -------------------------------------------------
-    BUTTON — PURPLE GRADIENT
--------------------------------------------------- */
+
 .primary-btn {
     width: 100%;
     padding: 15px;
@@ -189,9 +175,6 @@ body {
     transform: translateY(-3px) scale(1.03);
 }
 
-/* -------------------------------------------------
-    UPLOAD BOX
--------------------------------------------------- */
 .upload-box {
     width: 100%;
     height: 180px;
@@ -212,18 +195,14 @@ body {
     border-color: #a78bfa;
 }
 
-/* -------------------------------------------------
-    BOTTOM ACTION AREA
--------------------------------------------------- */
+
 .bottom-action {
     width: 92%;
     margin: 30px auto;
     display: flex;
     justify-content: flex-end;
 }
-/* ---------------------------------------------
-   GLOBAL
---------------------------------------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -236,9 +215,7 @@ body {
     color: #2d2d2d;
 }
 
-/* ---------------------------------------------
-   NAVBAR
---------------------------------------------- */
+
 .nav {
     width: 100%;
     background: rgba(255,255,255,0.8);
@@ -276,7 +253,7 @@ body {
 
 .nav-link {
     display: flex;
-    flex-direction: row;       /* Хөндлөнгөөр */
+    flex-direction: row;     
     gap: 20px;
 }
 
@@ -296,21 +273,14 @@ body {
     transform: translateY(-2px);
 }
 
-/* ---------------------------------------------
-   CONTAINER
---------------------------------------------- */
+
 .container {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;  /* маш бага хажуу зай */
+    padding: 0 20px;  
 }
 
-
-
-/* ---------------------------------------------
-   HERO SECTION
---------------------------------------------- */
 .hero {
     display: flex;
     justify-content: space-between;
@@ -339,9 +309,6 @@ body {
     box-shadow: 0 6px 15px rgba(124,58,237,0.15);
 }
 
-/* ---------------------------------------------
-   FINDER SECTION
---------------------------------------------- */
 #routes h2 {
     margin-top: 25px;
     color: #4c1d95;
@@ -383,9 +350,7 @@ select:focus, input:focus {
     box-shadow: 0 0 0 3px rgba(167,139,250,0.3);
 }
 
-/* ---------------------------------------------
-   MAIN BUTTON
---------------------------------------------- */
+
 .btn.primary {
     width: 100%;
     padding: 14px;
@@ -403,9 +368,6 @@ select:focus, input:focus {
     box-shadow: 0 6px 18px rgba(124,58,237,0.45);
 }
 
-/* ---------------------------------------------
-   SEARCH RESULTS
---------------------------------------------- */
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -425,15 +387,13 @@ select:focus, input:focus {
     color: #4c1d95;
 }
 
-/* -------------------------------------------------
-   FINDER SECTION — бүгдийг нэг мөрөнд оруулах
--------------------------------------------------- */
+
 #routes h2 {
     margin-top: 25px;
     color: #4c1d95;
 }
 
-/* Нэг мөрөөр байрлуулах */
+
 .finder {
     width: 100%;
     display: flex;
@@ -454,7 +414,7 @@ select:focus, input:focus {
     display: block;
 }
 
-/* Input + Select design */
+
 .finder select,
 .finder input {
     width: 100%;
@@ -481,10 +441,10 @@ select:focus, input:focus {
     box-shadow: 0 0 0 3px rgba(167,139,250,0.3);
 }
 
-/* Хайх товч — input-тэй тэнцүү өндөр */
+
 #search {
     height: 52px;
-    flex: 0 0 160px; /* Хэмжээг нь тогтоож баруун талд шахах */
+    flex: 0 0 160px; 
     border-radius: 14px;
     background: linear-gradient(135deg, #8b5cf6, #6d28d9);
     color: white;
@@ -526,7 +486,7 @@ select:focus, input:focus {
 
 .icon-btn i {
     font-size: 20px;
-    color: #4c1d95; /* Purple theme */
+    color: #4c1d95; 
 }
 
 
@@ -584,7 +544,7 @@ select:focus, input:focus {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #8b5cf6; /* purple */
+    border: 4px solid #8b5cf6; 
 }
 
 .profile-camera {
@@ -630,10 +590,10 @@ select:focus, input:focus {
   }
 
   .finder{
-    flex-direction:column;   /* баганаар байрлана */
-    align-items:stretch;     /* input-ууд адил өргөнтэй */
-    max-width:320px;         /* формын өргөнийг жижгэрүүлнэ */
-    margin:0 auto;           /* дэлгэцийн ХООРОНД ГОЛД НЬ */
+    flex-direction:column;  
+    align-items:stretch;     
+    max-width:320px;         
+    margin:0 auto;          
   }
 
   .finder > div{

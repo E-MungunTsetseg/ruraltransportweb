@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Register</title>
+  <link rel="stylesheet" href="car.css">
+</head>
+<body>
+
+<div class="overlay">
+  <div class="card">
+
+    <!-- HEADER -->
+    <div class="navbar">
+        <div class="brand">Rural Transport</div>
+        <div class="menu">
+           
+            <a href="login.html">Нэвтрэх</a>
+            <a href="signup-user.html" class="active">Бүртгүүлэх</a>
+        </div>
+    </div>
+
+    <!-- TITLE -->
+    
+    <!-- MAIN -->
+    <div class="main">
+        
+        <!-- LEFT FORM -->
+        <div class="left">
+            <select id="brand"><option>Брэнд</option></select>
+            <select id="model"><option>Машины загвар</option></select>
+            <select id="color"><option>Машины өнгө</option></select>
+            <div class="form-row">
+              <label for="madeYear">Үйлдвэрлэсэн он</label>
+              <input  type="date" id="madeYear">
+            </div>
+            <div class="form-row">
+              <label for="importYear">Орж ирсэн он</label>
+              <input  type="date" id="importYear">
+            </div>
+            <input id="plate" placeholder="Улсын дугаар">
+        </div>
+        
+        <!-- RIGHT -->
+        <div class="right">
+        <h3 class="title">Машины зургийг оруулна уу</h2>
+
+        <div class="photo-row">
+          <div class="photo-box active">
+            <span class="icon">📷</span>
+            <span>Урд</span>
+          </div>
+          <div class="photo-box">
+            <span class="icon">📷</span>
+            <span>Хойд</span>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Тээврийн хэрэгслийн гэрчилгээний зураг</h3>
+
+        <div class="photo-row">
+          <div class="photo-box">
+            <span class="icon">📷</span>
+            <span>Урд</span>
+          </div>
+          <div class="photo-box">
+            <span class="icon">📷</span>
+            <span>Хойд</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="save-btn" onclick="saveCar()">Хадгалах</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<script type="module" src="./car.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Register</title>
+  <link rel="stylesheet" href="personal.css">
+</head>
+<body>
+
+<div class="overlay">
+  <div class="card">
+
+    <!-- HEADER -->
+    <div class="navbar">
+      <div class="brand">Rural Transport</div>
+      <div class="menu">
+        <a href="login.html">Нэвтрэх</a>
+        <a href="signup-user.html" class="active">Бүртгүүлэх</a>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+        
+      <!-- LEFT FORM -->
+      <div class="left">
+        <input id="plateNumber" placeholder="Регистерийн Дугаар">
+
+        <select id="aimag">
+          <option value="">Аймаг</option>
+        </select>
+
+        <select id="sum">
+          <option value="">Сум, Дүүрэг</option>
+        </select>
+
+        <select id="horoo">
+          <option value="">Баг, Хороо</option>
+        </select>
+
+        <input id="street" placeholder="Гудамж, Тоот">
+        <input id="bankAccount" placeholder="Дансны Дугаар">
+      </div>
+        
+      <!-- RIGHT -->
+      <div class="right">
+        <h3 class="title">Иргэний үнэмлэхний зураг</h3>
+
+        <div class="photo-row">
+          <div class="photo-box active">
+            <span class="icon">📷</span>
+            <span>Урд</span>
+          </div>
+          <div class="photo-box">
+            <span class="icon">📷</span>
+            <span>Хойд</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="save-btn" onclick="saveCar()">Хадгалах</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ⚠️ ЗӨВХӨН ЭНЭ JS АЧААЛАГДАНА -->
+<script type="module" src="./personal.js"></script>
+
+</body>
+</html>

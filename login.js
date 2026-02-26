@@ -1,6 +1,3 @@
-// ============================
-// IMPORTS
-// ============================
 import { auth, db } from "./firebase.js";
 
 import {
@@ -15,10 +12,6 @@ import {
     setDoc
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
-
-// ============================
-// LOGIN
-// ============================
 document.getElementById("loginBtn").onclick = async () => {
 
     const phone = document.getElementById("loginPhone").value.trim();
@@ -38,16 +31,10 @@ document.getElementById("loginBtn").onclick = async () => {
     }
 };
 
-
-
-// ============================
-// RESET MODAL OPEN
-// ============================
 document.getElementById("forgotBtn").onclick = () => {
 
     document.getElementById("resetModal").style.display = "flex";
 
-    // Reset steps
     document.getElementById("step1").style.display = "block";
     document.getElementById("step2").style.display = "none";
     document.getElementById("step3").style.display = "none";
@@ -55,17 +42,10 @@ document.getElementById("forgotBtn").onclick = () => {
     document.getElementById("otpError").style.display = "none";
 };
 
-
-// CLOSE
 document.getElementById("resetCloseX").onclick = () => {
     document.getElementById("resetModal").style.display = "none";
 };
 
-
-
-// ============================
-// STEP 1 — SEND OTP
-// ============================
 document.getElementById("sendCodeBtn").onclick = () => {
 
     const phone = document.getElementById("resetPhone").value.trim();
@@ -73,20 +53,14 @@ document.getElementById("sendCodeBtn").onclick = () => {
     if (phone.length !== 8)
         return alert("Утасны дугаар буруу!");
 
-    // Fake OTP
     window.generatedOTP = Math.floor(100000 + Math.random() * 900000);
-    console.log("OTP:", window.generatedOTP); // Test only
+    console.log("OTP:", window.generatedOTP); 
 
-    // Move to step 2
+  
     document.getElementById("step1").style.display = "none";
     document.getElementById("step2").style.display = "block";
 };
 
-
-
-// ============================
-// STEP 2 — VERIFY OTP
-// ============================
 document.getElementById("verifyBtn").onclick = () => {
 
     const code = document.getElementById("otpCode").value.trim();
@@ -102,11 +76,6 @@ document.getElementById("verifyBtn").onclick = () => {
     }
 };
 
-
-
-// ============================
-// STEP 3 — RESET PASSWORD
-// ============================
 document.getElementById("updatePassBtn").onclick = async () => {
 
     const newPass = document.getElementById("newPass").value.trim();
@@ -117,7 +86,6 @@ document.getElementById("updatePassBtn").onclick = async () => {
         return alert("Нууц үг хамгийн багадаа 6 тэмдэгт!");
 
     try {
-        // --- GET FIRESTORE USER DATA (users/uid) ---
         const userDoc = doc(db, "users", phone);
         const snap    = await getDoc(userDoc);
 
@@ -126,21 +94,16 @@ document.getElementById("updatePassBtn").onclick = async () => {
 
         const userData = snap.data();
 
-
-        // --- DELETE OLD FIREBASE AUTH ACCOUNT (if exists)
         try {
             const tempLogin = await signInWithEmailAndPassword(auth, email, "wrongPassword");
             await deleteUser(tempLogin.user);
         } catch(e) {
-            // Ignore — it's normal if old password wrong
+            
         }
 
-
-        // --- CREATE NEW USER WITH NEW PASSWORD ---
         const newUser = await createUserWithEmailAndPassword(auth, email, newPass);
 
 
-        // --- RESTORE FIRESTORE DATA ---
         await setDoc(doc(db, "users", newUser.user.uid), userData);
 
 

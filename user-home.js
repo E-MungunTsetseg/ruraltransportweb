@@ -1,18 +1,16 @@
-/* =======================
-   IMPORTS
-======================= */
+
 import { auth, db } from "./firebase.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-import { doc, getDoc, updateDoc, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { 
+    doc, getDoc, updateDoc, collection, 
+    getDocs, query, where 
+} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-storage.js";
 
-/* GLOBAL */
+
 let activeUser = null;
 const storage = getStorage();
 
-/* =======================
-   LOAD USER
-======================= */
 onAuthStateChanged(auth, async (user) => {
   activeUser = user;
   if (!user) return;
@@ -26,37 +24,34 @@ onAuthStateChanged(auth, async (user) => {
   document.getElementById("pFName").textContent = data.fname;
   document.getElementById("pPhone").textContent = data.phone;
 
-  if (data.imageURL) document.getElementById("profileImg").src = data.imageURL;
+  if (data.imageURL) {
+    document.getElementById("profileImg").src = data.imageURL;
+  }
 });
 
-/* =======================
-   PROFILE POPUP
-======================= */
 const profileBox = document.getElementById("profileBox");
+const navBar = document.querySelector(".nav");
 
 document.getElementById("profileBtn").onclick = () => {
-    profileBox.style.display = "flex";
+  profileBox.style.display = "flex";
+  navBar.classList.add("blur");
 };
 
 document.getElementById("closePopup").onclick = () => {
-    profileBox.style.display = "none";
+  profileBox.style.display = "none";
+  navBar.classList.remove("blur");
 };
 
-/* =======================
-   LOGOUT
-======================= */
 document.getElementById("logoutIcon").onclick = () => {
   signOut(auth).then(() => {
       window.location.href = "login.html";
   });
 };
 
-/* =======================
-   PROFILE IMAGE UPLOAD
-======================= */
 document.getElementById("profileUpload").addEventListener("change", async function () {
 
   if (!activeUser) return;
+
   const file = this.files[0];
   if (!file) return;
 
@@ -70,20 +65,17 @@ document.getElementById("profileUpload").addEventListener("change", async functi
   const url = await getDownloadURL(storageRef);
   await updateDoc(doc(db, "users", activeUser.uid), { imageURL: url });
 
-  alert("Зураг хадгалагдлаа!");
+  alert("Зураг амжилттай шинэчлэгдлээ!");
 });
 
-/* =======================
-   LOAD ROUTES
-======================= */
 async function loadStops() {
   const snap = await getDocs(collection(db, "routes"));
 
   const fromSel = document.getElementById("from");
   const toSel = document.getElementById("to");
 
-  let fromSet = new Set();
-  let toSet = new Set();
+  const fromSet = new Set();
+  const toSet = new Set();
 
   snap.forEach(doc => {
     const r = doc.data();
@@ -91,22 +83,25 @@ async function loadStops() {
     toSet.add(r.to);
   });
 
-  fromSet.forEach(v => fromSel.innerHTML += `<option>${v}</option>`);
-  toSet.forEach(v => toSel.innerHTML += `<option>${v}</option>`);
+  fromSet.forEach(v => {
+    fromSel.innerHTML += `<option value="${v}">${v}</option>`;
+});
+
+toSet.forEach(v => {
+    toSel.innerHTML += `<option value="${v}">${v}</option>`;
+});
+
 }
 
 loadStops();
 
-/* =======================
-   SEARCH ROUTES
-======================= */
 const fromSel = document.getElementById("from");
 const toSel = document.getElementById("to");
 const dateSel = document.getElementById("date");
 const resultsBox = document.getElementById("results");
 
 document.getElementById("search").onclick = async () => {
-  
+
   const from = fromSel.value;
   const to = toSel.value;
   const date = dateSel.value;
@@ -114,19 +109,23 @@ document.getElementById("search").onclick = async () => {
   if (!from || !to || !date)
     return alert("Бүх талбарыг бөглөнө үү!");
 
+  resultsBox.innerHTML = `<p>Уншиж байна...</p>`;
+
   const q = query(
-      collection(db, "routes"),
-      where("from", "==", from),
-      where("to", "==", to),
-      where("date", "==", date)
+    collection(db, "routes"),
+    where("from", "==", from),
+    where("to", "==", to),
+    where("date", "==", date)
   );
 
   const snap = await getDocs(q);
 
   resultsBox.innerHTML = "";
 
-  if (snap.empty)
-      return resultsBox.innerHTML = `<p>Илэрц олдсонгүй…</p>`;
+  if (snap.empty) {
+    resultsBox.innerHTML = `<p>Илэрц олдсонгүй…</p>`;
+    return;
+  }
 
   snap.forEach(doc => {
     const r = doc.data();
@@ -143,13 +142,3 @@ document.getElementById("search").onclick = async () => {
     `;
   });
 };
-document.getElementById("profileBtn").onclick = () => {
-    document.getElementById("profileBox").style.display = "flex";
-    document.querySelector(".nav").classList.add("blur");
-};
-
-document.getElementById("closePopup").onclick = () => {
-    document.getElementById("profileBox").style.display = "none";
-    document.querySelector(".nav").classList.remove("blur");
-};
-
